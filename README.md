@@ -16,6 +16,9 @@ $assets = Get-SnipeITAssets -Credential $credential -BaseUrl "https://yoursnipei
 ```
 
 # Example of processing the results for cleaner output along with CSV
+
+'''
 $assets | Select-Object -Property asset_tag, serial -ExpandProperty assigned_to | 
     Where-Object email -ne $null | 
     Export-Csv export.csv
+'''
